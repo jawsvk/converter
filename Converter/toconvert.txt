@@ -1,0 +1,9 @@
+string acct_id;
+                        string acct_cat;
+                        long acct_grp;
+                        string acct_status;
+                        string acct_type;
+                        string external_id;
+                        string external_id_type;
+                        ExtIDList extIDList;
+                        AddressStruct acct_addr;
