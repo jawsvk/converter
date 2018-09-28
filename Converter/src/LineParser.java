@@ -60,7 +60,6 @@ public class LineParser {
 					currentData.add(currentLine);
 				}
 				
-						
 			}
 			
 			return processLines(currentData);
