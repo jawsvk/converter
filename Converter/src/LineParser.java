@@ -103,9 +103,10 @@ public class LineParser {
 			}
 			else
 			{
-			String[] output = s.trim().split(" ");
-			currentLine = new Line(cleanUp(output[0]),cleanUp(output[1]));
-			if(s.contains("not required")) currentLine.setIsMandatory(false);
+				//record default lines
+				String[] output = s.trim().split(" ");
+				currentLine = new Line(cleanUp(output[0]),cleanUp(output[1]));
+				if(s.contains("not required")) currentLine.setIsMandatory(false);
 			}
 			
 			currentData.add(currentLine); 
@@ -140,7 +141,7 @@ public class LineParser {
 	
 	public String cleanUp(String s) {
 		
-		//remove ;		
+			
 		s = s.replace(";","");
 		
 		if(s.contains("//")) s = s.replace("//", "");
@@ -185,8 +186,8 @@ public class LineParser {
 					sb.append(" </xs:element>");
 				}
 			else {
-			
-					sb.append(String.format("type=\"xs:%s\" ", typeMap.get(type.toLowerCase())));  //normal primitive types		
+					//to handle normal primitive types	
+					sb.append(String.format("type=\"xs:%s\" ", typeMap.get(type.toLowerCase())));  	
 				 
 				sb.append("/>");
 			}
